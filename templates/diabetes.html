@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/ico" href="https://tse3.mm.bing.net/th?id=OIP.-mRPQ8r4-HirLn_a41aIRwHaH0&pid=Api&P=0&w=30&h=30" />
+	<title>Diabetes & Heart disease detector</title>
+	<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+	<style type="text/css">
+		html, body {
+     min-height: 100%;
+		}
+		body{
+  			background-image: url(https://www.strath.ac.uk/media/1newwebsite/departmentsubject/computerandinformationsciences/digitalhealthwellnessresearchgroup/1600x600/banner-1600x600.jpg);
+  			background-size: contain;
+  			background-repeat: repeat-y;
+            
+  			/*linear-gradient(to right,#cab1bd,#eac9c1,#ebd8d0,#cab1bd)*/;
+		}
+		h1{
+			color: #3a606e;
+		}
+	input{
+		width: 20em;
+		height: 5%;
+	}
+	div h1{
+		text-align: center;
+	}
+	.Navbar{
+		padding: 1em;
+	}
+	.Navbar a{
+ 	text-decoration: none;
+ 	margin-right: 5em;
+	}
+	.Navbar a:hover{
+ 		text-decoration: none;
+	}
+
+	.Form{
+		float: left;
+		border: 1px solid grey;
+		border-radius: 3.6%;
+		margin: 0.5em 2em;
+		background-color: #d3f3f1;
+		padding: 0.5em;
+		color: #284b63;
+	}
+	.Form:hover{
+		border: 2px solid #3a606e;
+		box-shadow:  8px 5px 8px 5px #888888;
+	}	
+	</style>
+</head>
+<body>
+	
+<div class="Form">
+<h1>Diabetes detector</h1>
+
+ <form action="/result" method="POST">
+ 	<label>Number of pregnancies:
+ 		<input type="Number" name="preg" minlength="0" required>
+ 	</label><br><br>
+ 	<label>Glucose:
+ 		<input type="Number" name="glu" required placeholder="Glucose level in mg/dl">
+ 	</label><br><br>
+ 	<label>Blood Pressure:
+ 		<input type="Number" name="bp" required placeholder="enter bp in mmHg">
+ 	</label><br><br>
+ 	<label>Skin Thickness:
+ 		<input type="Number" name="st" required placeholder="Enter skin Thickness in mm">
+ 	</label><br><br>
+ 	<label>Insulin:
+ 		<input type="Number" name="Ins" required placeholder="enter insulin level in IU/ml">
+ 	</label><br><br>
+ 	<label>BMI:
+ 		<input type="Number" name="bmi" required placeholder="enter bmi in kg/(m^2)">
+ 	</label><br><br>
+ 	<label>DiabetesPedigreeFunction:
+ 		<input type="Number" name="dpf" required>
+ 	</label><br><br>
+ 	<label>Age:
+ 		<input type="Number" name="age" required minlength="1">
+ 	</label><br><br>
+ 	<button>Submit</button>
+ 	<input type="reset" name="" style="width: 5em" class="btn btn-primary">
+
+ </form>
+</div>
+
+<div class="Form">
+ <h1>Heart disease detector</h1>
+ <form action="/result1" method="POST">
+ 	<label>Male:
+ 		<input type="Number" name="male" min="0" max="1" required placeholder=" enter 1 if you are male else enter 0">
+ 	</label><br><br>
+ 	<label>Age:
+ 		<input type="Number" name="age" required placeholder="Enter your age">
+ 	</label><br><br>
+ 	<label>Are you a current Smoker:
+ 		<input type="Number" name="cs" min="0" max="1" required placeholder="Enter 1 if yes else enter 0">
+ 	</label><br><br>
+ 	<label>cigarettes per day:
+ 		<input type="Number" name="cigar" required placeholder="Number of cigarettes smoked per day">
+ 	</label><br><br>
+ 	<label>Whether you was on blood pressure medication:
+ 		<input type="Number" name="bpmeds" required min="0" max="1" placeholder="enter 1 if yes else enter 0">
+ 	</label><br><br>
+ 	<label>Did you previously had a stroke?
+ 		<input type="Number" name="str" required min="0" max="1" placeholder="enter 1 if yes else enter 0">
+ 	</label><br><br>
+ 	<label>Whether you are hypertensive:
+ 		<input type="Number" name="hy" required min="0" max="1" placeholder="enter 1 if yes else enter 0">
+ 	</label><br><br>
+ 	<label>Do you have diabetes?
+ 		<input type="Number" name="diab" required min="0" max="1" placeholder="enter 1 if yes else enter 0">
+ 	</label><br><br>
+ 	<label>Total Cholestrol:
+ 		<input type="Number" name="chol" required min="1" placeholder="Enter total Cholestrol in mg/dl">
+ 	</label><br><br>
+ 	<label>Systolic blood pressure:
+ 		<input type="Number" name="sysbp" required min="1" placeholder="Enter Systolic blood pressure in mmHg">
+ 	</label><br><br>
+ 	<label>diastolic blood pressure:
+ 		<input type="Number" name="diabp" required min="1" placeholder="Enter diastolic blood pressue in mmHg">
+ 	</label><br><br>
+ 	<label>BMI:
+ 		<input type="Number" name="bmi" min="8" required placeholder="Enter BMI">
+ 	</label><br><br>
+ 	<label>Heart rate:
+ 		<input type="Number" name="hrate" required placeholder="Enter heart rate">
+ 	</label><br><br>
+ 	<label>glucose:
+ 		<input type="Number" name="glu" required placeholder="Enter glucose level in mg/dl:">
+ 	</label><br><br>
+ 	<button>Submit</button>
+ 	<input type="reset" name="" style="width: 5em" class="btn btn-primary">
+
+ </form>
+ </div>
+</body>
+</html>
